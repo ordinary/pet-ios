@@ -21,13 +21,11 @@
 		F40E890F1691F75D0065AC91 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F40E890E1691F75D0065AC91 /* libz.dylib */; };
 		F40E89111691F7650065AC91 /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F40E89101691F7650065AC91 /* libxml2.2.dylib */; };
 		F40E89181691FA310065AC91 /* PetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F40E89161691F9B90065AC91 /* PetViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		F4936B6C16941EF2005D9DB4 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4936B6516941CF9005D9DB4 /* CollectionViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		F4936B6D16941EF2005D9DB4 /* ColllectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F4936B6716941CF9005D9DB4 /* ColllectionViewCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		F4936B6E16941EF2005D9DB4 /* WaterFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F4936B6916941CF9005D9DB4 /* WaterFlowLayout.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		F4936B7016941EF2005D9DB4 /* LoadingMoreFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4936B6316941CEB005D9DB4 /* LoadingMoreFooterView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		F43076DA169C6EC2008EB251 /* WaterFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F43076D9169C6E65008EB251 /* WaterFlowLayout.m */; };
+		F43076DF169C71B7008EB251 /* PetDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F43076DD169C71B6008EB251 /* PetDetailViewController.m */; };
+		F43076E0169C71B7008EB251 /* PetDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F43076DE169C71B7008EB251 /* PetDetailViewController.xib */; };
 		F4936B7116941EF2005D9DB4 /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4936B5E16941CD9005D9DB4 /* AsyncImageView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F4936B7216941EF2005D9DB4 /* FullyLoaded.m in Sources */ = {isa = PBXBuildFile; fileRef = F4936B6016941CD9005D9DB4 /* FullyLoaded.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		F4936B7316941EF2005D9DB4 /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4936B5C16941CCA005D9DB4 /* EGORefreshTableHeaderView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F4936B7416941EF2005D9DB4 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = F4936B5916941CB6005D9DB4 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F4936B7516941EF2005D9DB4 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = F4936B4216941C99005D9DB4 /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F4936B7616941EF2005D9DB4 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = F4936B4516941C99005D9DB4 /* ASIDataCompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -51,6 +49,7 @@
 		F4936BAF16944189005D9DB4 /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = F4936BA116944122005D9DB4 /* SBJsonTokeniser.m */; };
 		F4936BB016944189005D9DB4 /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = F4936BA316944122005D9DB4 /* SBJsonUTF8Stream.m */; };
 		F4936BB116944189005D9DB4 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = F4936BA516944122005D9DB4 /* SBJsonWriter.m */; };
+		F4A03BD01699D0A5002F5C4C /* PetUICollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A03BCF1699D0A5002F5C4C /* PetUICollectionViewCell.m */; };
 		F4D5D2B116928CBD00A470EF /* PetUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D5D2B016928CBD00A470EF /* PetUnit.m */; };
 		F4D5D30F1693336500A470EF /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4D5D30E1693336500A470EF /* ImageIO.framework */; };
 		F4D5D3121693336B00A470EF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4D5D3111693336B00A470EF /* MapKit.framework */; };
@@ -79,6 +78,11 @@
 		F40E89101691F7650065AC91 /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
 		F40E89151691F9B90065AC91 /* PetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PetViewController.h; path = pet/PetViewController.h; sourceTree = SOURCE_ROOT; };
 		F40E89161691F9B90065AC91 /* PetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = PetViewController.m; path = pet/PetViewController.m; sourceTree = SOURCE_ROOT; };
+		F43076D8169C6E65008EB251 /* WaterFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WaterFlowLayout.h; path = water/WaterFlowLayout.h; sourceTree = "<group>"; };
+		F43076D9169C6E65008EB251 /* WaterFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = WaterFlowLayout.m; path = water/WaterFlowLayout.m; sourceTree = "<group>"; };
+		F43076DC169C71B6008EB251 /* PetDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PetDetailViewController.h; path = pet/PetDetailViewController.h; sourceTree = SOURCE_ROOT; };
+		F43076DD169C71B6008EB251 /* PetDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PetDetailViewController.m; path = pet/PetDetailViewController.m; sourceTree = SOURCE_ROOT; };
+		F43076DE169C71B7008EB251 /* PetDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PetDetailViewController.xib; path = pet/PetDetailViewController.xib; sourceTree = SOURCE_ROOT; };
 		F4936B4116941C99005D9DB4 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ASIAuthenticationDialog.h; path = ASIHTTPRequest/ASIAuthenticationDialog.h; sourceTree = "<group>"; };
 		F4936B4216941C99005D9DB4 /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ASIAuthenticationDialog.m; path = ASIHTTPRequest/ASIAuthenticationDialog.m; sourceTree = "<group>"; };
 		F4936B4316941C99005D9DB4 /* ASICacheDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ASICacheDelegate.h; path = ASIHTTPRequest/ASICacheDelegate.h; sourceTree = "<group>"; };
@@ -103,22 +107,11 @@
 		F4936B5616941C99005D9DB4 /* ASIWebPageRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ASIWebPageRequest.m; path = ASIHTTPRequest/ASIWebPageRequest.m; sourceTree = "<group>"; };
 		F4936B5816941CB6005D9DB4 /* Reachability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = ASIHTTPRequest/Reachability/Reachability.h; sourceTree = "<group>"; };
 		F4936B5916941CB6005D9DB4 /* Reachability.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = ASIHTTPRequest/Reachability/Reachability.m; sourceTree = "<group>"; };
-		F4936B5A16941CCA005D9DB4 /* blueArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blueArrow.png; path = EGORefreshTableHeaderView/blueArrow.png; sourceTree = "<group>"; };
-		F4936B5B16941CCA005D9DB4 /* EGORefreshTableHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EGORefreshTableHeaderView.h; path = EGORefreshTableHeaderView/EGORefreshTableHeaderView.h; sourceTree = "<group>"; };
-		F4936B5C16941CCA005D9DB4 /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = EGORefreshTableHeaderView.m; path = EGORefreshTableHeaderView/EGORefreshTableHeaderView.m; sourceTree = "<group>"; };
 		F4936B5D16941CD9005D9DB4 /* AsyncImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AsyncImageView.h; path = FullyLoaded/AsyncImageView.h; sourceTree = "<group>"; };
 		F4936B5E16941CD9005D9DB4 /* AsyncImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AsyncImageView.m; path = FullyLoaded/AsyncImageView.m; sourceTree = "<group>"; };
 		F4936B5F16941CD9005D9DB4 /* FullyLoaded.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FullyLoaded.h; path = FullyLoaded/FullyLoaded.h; sourceTree = "<group>"; };
 		F4936B6016941CD9005D9DB4 /* FullyLoaded.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = FullyLoaded.m; path = FullyLoaded/FullyLoaded.m; sourceTree = "<group>"; };
 		F4936B6116941CD9005D9DB4 /* SynthesizeSingleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SynthesizeSingleton.h; path = FullyLoaded/SynthesizeSingleton.h; sourceTree = "<group>"; };
-		F4936B6216941CEB005D9DB4 /* LoadingMoreFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LoadingMoreFooterView.h; path = LoadingMoreFooterView/LoadingMoreFooterView.h; sourceTree = "<group>"; };
-		F4936B6316941CEB005D9DB4 /* LoadingMoreFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = LoadingMoreFooterView.m; path = LoadingMoreFooterView/LoadingMoreFooterView.m; sourceTree = "<group>"; };
-		F4936B6416941CF9005D9DB4 /* CollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CollectionViewController.h; path = water/CollectionViewController.h; sourceTree = "<group>"; };
-		F4936B6516941CF9005D9DB4 /* CollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CollectionViewController.m; path = water/CollectionViewController.m; sourceTree = "<group>"; };
-		F4936B6616941CF9005D9DB4 /* ColllectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ColllectionViewCell.h; path = water/ColllectionViewCell.h; sourceTree = "<group>"; };
-		F4936B6716941CF9005D9DB4 /* ColllectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ColllectionViewCell.m; path = water/ColllectionViewCell.m; sourceTree = "<group>"; };
-		F4936B6816941CF9005D9DB4 /* WaterFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WaterFlowLayout.h; path = water/WaterFlowLayout.h; sourceTree = "<group>"; };
-		F4936B6916941CF9005D9DB4 /* WaterFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = WaterFlowLayout.m; path = water/WaterFlowLayout.m; sourceTree = "<group>"; };
 		F4936B8216942699005D9DB4 /* PetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PetViewController.xib; sourceTree = "<group>"; };
 		F4936B8D16944122005D9DB4 /* NSObject+SBJson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSObject+SBJson.h"; path = "json/NSObject+SBJson.h"; sourceTree = "<group>"; };
 		F4936B8E16944122005D9DB4 /* NSObject+SBJson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "NSObject+SBJson.m"; path = "json/NSObject+SBJson.m"; sourceTree = "<group>"; };
@@ -145,6 +138,8 @@
 		F4936BA316944122005D9DB4 /* SBJsonUTF8Stream.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SBJsonUTF8Stream.m; path = json/SBJsonUTF8Stream.m; sourceTree = "<group>"; };
 		F4936BA416944122005D9DB4 /* SBJsonWriter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SBJsonWriter.h; path = json/SBJsonWriter.h; sourceTree = "<group>"; };
 		F4936BA516944122005D9DB4 /* SBJsonWriter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SBJsonWriter.m; path = json/SBJsonWriter.m; sourceTree = "<group>"; };
+		F4A03BCE1699D0A5002F5C4C /* PetUICollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PetUICollectionViewCell.h; path = pet/PetUICollectionViewCell.h; sourceTree = SOURCE_ROOT; };
+		F4A03BCF1699D0A5002F5C4C /* PetUICollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PetUICollectionViewCell.m; path = pet/PetUICollectionViewCell.m; sourceTree = SOURCE_ROOT; };
 		F4D5D2AF16928CBD00A470EF /* PetUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PetUnit.h; path = pet/PetUnit.h; sourceTree = SOURCE_ROOT; };
 		F4D5D2B016928CBD00A470EF /* PetUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PetUnit.m; path = pet/PetUnit.m; sourceTree = SOURCE_ROOT; };
 		F4D5D30E1693336500A470EF /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
@@ -184,6 +179,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				F43076D6169C6E4E008EB251 /* water */,
 				F40E890C1691F74D0065AC91 /* CFNetwork.framework */,
 				F40E890E1691F75D0065AC91 /* libz.dylib */,
 				F40E890A1691F7450065AC91 /* SystemConfiguration.framework */,
@@ -191,10 +187,7 @@
 				F40E89101691F7650065AC91 /* libxml2.2.dylib */,
 				F4D5D30E1693336500A470EF /* ImageIO.framework */,
 				F4D5D3111693336B00A470EF /* MapKit.framework */,
-				F4936B4016941C76005D9DB4 /* water */,
-				F4936B3F16941C68005D9DB4 /* LoadingMoreFooterView */,
 				F4936B3E16941C5E005D9DB4 /* FullyLoaded */,
-				F4936B3D16941C37005D9DB4 /* EGORefreshTableHeaderView */,
 				F4936B3C16941C26005D9DB4 /* ASIHTTPRequest */,
 				F4936B8C169440E4005D9DB4 /* json */,
 				469487C013A0A6A5002836C8 /* pet */,
@@ -248,6 +241,11 @@
 				F40E88BD1691EAB10065AC91 /* PetMenuBarView.m */,
 				F4D5D2AF16928CBD00A470EF /* PetUnit.h */,
 				F4D5D2B016928CBD00A470EF /* PetUnit.m */,
+				F4A03BCE1699D0A5002F5C4C /* PetUICollectionViewCell.h */,
+				F4A03BCF1699D0A5002F5C4C /* PetUICollectionViewCell.m */,
+				F43076DC169C71B6008EB251 /* PetDetailViewController.h */,
+				F43076DD169C71B6008EB251 /* PetDetailViewController.m */,
+				F43076DE169C71B7008EB251 /* PetDetailViewController.xib */,
 			);
 			name = pet;
 			path = LightMenuBar;
@@ -260,6 +258,15 @@
 				469487C313A0A6A5002836C8 /* PetMenuBarAppDelegate.m */,
 			);
 			path = Sample;
+			sourceTree = "<group>";
+		};
+		F43076D6169C6E4E008EB251 /* water */ = {
+			isa = PBXGroup;
+			children = (
+				F43076D8169C6E65008EB251 /* WaterFlowLayout.h */,
+				F43076D9169C6E65008EB251 /* WaterFlowLayout.m */,
+			);
+			name = water;
 			sourceTree = "<group>";
 		};
 		F4936B3C16941C26005D9DB4 /* ASIHTTPRequest */ = {
@@ -292,16 +299,6 @@
 			name = ASIHTTPRequest;
 			sourceTree = "<group>";
 		};
-		F4936B3D16941C37005D9DB4 /* EGORefreshTableHeaderView */ = {
-			isa = PBXGroup;
-			children = (
-				F4936B5A16941CCA005D9DB4 /* blueArrow.png */,
-				F4936B5B16941CCA005D9DB4 /* EGORefreshTableHeaderView.h */,
-				F4936B5C16941CCA005D9DB4 /* EGORefreshTableHeaderView.m */,
-			);
-			name = EGORefreshTableHeaderView;
-			sourceTree = "<group>";
-		};
 		F4936B3E16941C5E005D9DB4 /* FullyLoaded */ = {
 			isa = PBXGroup;
 			children = (
@@ -312,28 +309,6 @@
 				F4936B6116941CD9005D9DB4 /* SynthesizeSingleton.h */,
 			);
 			name = FullyLoaded;
-			sourceTree = "<group>";
-		};
-		F4936B3F16941C68005D9DB4 /* LoadingMoreFooterView */ = {
-			isa = PBXGroup;
-			children = (
-				F4936B6216941CEB005D9DB4 /* LoadingMoreFooterView.h */,
-				F4936B6316941CEB005D9DB4 /* LoadingMoreFooterView.m */,
-			);
-			name = LoadingMoreFooterView;
-			sourceTree = "<group>";
-		};
-		F4936B4016941C76005D9DB4 /* water */ = {
-			isa = PBXGroup;
-			children = (
-				F4936B6416941CF9005D9DB4 /* CollectionViewController.h */,
-				F4936B6516941CF9005D9DB4 /* CollectionViewController.m */,
-				F4936B6616941CF9005D9DB4 /* ColllectionViewCell.h */,
-				F4936B6716941CF9005D9DB4 /* ColllectionViewCell.m */,
-				F4936B6816941CF9005D9DB4 /* WaterFlowLayout.h */,
-				F4936B6916941CF9005D9DB4 /* WaterFlowLayout.m */,
-			);
-			name = water;
 			sourceTree = "<group>";
 		};
 		F4936B5716941C9E005D9DB4 /* Reachability */ = {
@@ -430,6 +405,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4936B8316942699005D9DB4 /* PetViewController.xib in Resources */,
+				F43076E0169C71B7008EB251 /* PetDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,6 +416,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F43076DA169C6EC2008EB251 /* WaterFlowLayout.m in Sources */,
 				F4936BA616944189005D9DB4 /* NSObject+SBJson.m in Sources */,
 				F4936BA716944189005D9DB4 /* SBJsonParser.m in Sources */,
 				F4936BA816944189005D9DB4 /* SBJsonStreamParser.m in Sources */,
@@ -452,13 +429,8 @@
 				F4936BAF16944189005D9DB4 /* SBJsonTokeniser.m in Sources */,
 				F4936BB016944189005D9DB4 /* SBJsonUTF8Stream.m in Sources */,
 				F4936BB116944189005D9DB4 /* SBJsonWriter.m in Sources */,
-				F4936B6C16941EF2005D9DB4 /* CollectionViewController.m in Sources */,
-				F4936B6D16941EF2005D9DB4 /* ColllectionViewCell.m in Sources */,
-				F4936B6E16941EF2005D9DB4 /* WaterFlowLayout.m in Sources */,
-				F4936B7016941EF2005D9DB4 /* LoadingMoreFooterView.m in Sources */,
 				F4936B7116941EF2005D9DB4 /* AsyncImageView.m in Sources */,
 				F4936B7216941EF2005D9DB4 /* FullyLoaded.m in Sources */,
-				F4936B7316941EF2005D9DB4 /* EGORefreshTableHeaderView.m in Sources */,
 				F4936B7416941EF2005D9DB4 /* Reachability.m in Sources */,
 				F4936B7516941EF2005D9DB4 /* ASIAuthenticationDialog.m in Sources */,
 				F4936B7616941EF2005D9DB4 /* ASIDataCompressor.m in Sources */,
@@ -475,6 +447,8 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				469487C413A0A6A5002836C8 /* PetMenuBarAppDelegate.m in Sources */,
 				F4D5D2B116928CBD00A470EF /* PetUnit.m in Sources */,
+				F4A03BD01699D0A5002F5C4C /* PetUICollectionViewCell.m in Sources */,
+				F43076DF169C71B7008EB251 /* PetDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,8 +467,9 @@
 				GCC_PREFIX_HEADER = pet_Prefix.pch;
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = "pet-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = pet;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -508,8 +483,9 @@
 				GCC_PREFIX_HEADER = pet_Prefix.pch;
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = "pet-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = pet;
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

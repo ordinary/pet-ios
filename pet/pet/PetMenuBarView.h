@@ -11,7 +11,7 @@
 @class PetMenuBar;
 @protocol PetMenuBarDelegate;
 
-@interface PetMenuBarView : UIView {
+@interface PetMenuBarView : UICollectionReusableView {
 
     id<PetMenuBarDelegate> __weak _delegate;
     NSUInteger _selectedItemIndex;

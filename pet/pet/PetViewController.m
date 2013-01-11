@@ -10,7 +10,8 @@
 #import "AsyncImageView.h"
 
 #define NUMBER_OF_COLUMNS 3
-#define petURL @"http://localhost:8080/pet-web/pet/"
+#define COUNT 20
+#define petURL @"http://192.168.1.100:8080/pet-web/pet/"
 
 @interface PetViewController ()
 @property (nonatomic,retain) NSMutableArray *petUnits;
@@ -25,31 +26,34 @@
 @synthesize currentPage;
 @synthesize type;
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self setup];
     PetMenuBar *menuBar = [[PetMenuBar alloc] initWithFrame:CGRectMake(0, 0, 320, 40) andStyle:PetMenuBarStyleItem];
     menuBar.delegate = self;
     menuBar.bounces = YES;
     menuBar.selectedItemIndex = 0;
     menuBar.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:menuBar];
-    
+ 
     
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor lightGrayColor];
 	self.collectionView.backgroundColor = [UIColor whiteColor];
-	[self.collectionView registerClass:[ColllectionViewCell class] forCellWithReuseIdentifier:@"CELL_ID"];
+	[self.collectionView registerClass:[PetUICollectionViewCell class] forCellWithReuseIdentifier:@"CELL_ID"];
+    [((WaterFlowLayout*)self.collectionView.collectionViewLayout) setFlowdatasource:self];
+    [((WaterFlowLayout*)self.collectionView.collectionViewLayout) setFlowdelegate:self];
+    
 	self.collectionView.allowsSelection = YES;
     self.collectionView.frame = CGRectMake(0, 40, 320, 440);
     self.collectionView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
-    [((WaterFlowLayout*)self.collectionView.collectionViewLayout) setFlowdatasource:self];
-    [((WaterFlowLayout*)self.collectionView.collectionViewLayout) setFlowdelegate:self];
     refreshControl = [[UIRefreshControl alloc] init];
 	refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Refresh"];
 	[self.collectionView addSubview:refreshControl];
 	[refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
-    [self setup];
+
     [self loadData];
     
     
@@ -62,18 +66,27 @@
     self.petUnits = [NSMutableArray array];
     parser = [[SBJsonParser alloc] init];
     typeDictionary =[[NSMutableDictionary alloc]init];
-    [typeDictionary setValue:[[NSNumber alloc]initWithInt:1000] forKey:@"0"];
-    [typeDictionary setValue:[[NSNumber alloc]initWithInt:1000] forKey:@"1"];
-    [typeDictionary setValue:[[NSNumber alloc]initWithInt:1000] forKey:@"2"];
-    [typeDictionary setValue:[[NSNumber alloc]initWithInt:1000] forKey:@"3"];
-    [typeDictionary setValue:[[NSNumber alloc]initWithInt:1000] forKey:@"4"];
+    [typeDictionary setValue:[[NSNumber alloc]initWithInt:50023067] forKey:@"0"];
+    [typeDictionary setValue:[[NSNumber alloc]initWithInt:50015262] forKey:@"1"];
+    [typeDictionary setValue:[[NSNumber alloc]initWithInt:50023066] forKey:@"2"];
+    [typeDictionary setValue:[[NSNumber alloc]initWithInt:50015380] forKey:@"3"];
+    [typeDictionary setValue:[[NSNumber alloc]initWithInt:50016383] forKey:@"4"];
+    [typeDictionary setValue:[[NSNumber alloc]initWithInt:217309] forKey:@"5"];
+    [typeDictionary setValue:[[NSNumber alloc]initWithInt:50015289] forKey:@"6"];
+    [typeDictionary setValue:[[NSNumber alloc]initWithInt:50015288] forKey:@"7"];
+    [typeDictionary setValue:[[NSNumber alloc]initWithInt:50001739] forKey:@"8"];
     
     typeNameDictionary=[[NSMutableDictionary alloc]init];
-    [typeNameDictionary setValue:@"狗狗" forKey:@"0"];
-    [typeNameDictionary setValue:@"狗狗" forKey:@"1"];
-    [typeNameDictionary setValue:@"狗狗" forKey:@"2"];
-    [typeNameDictionary setValue:@"狗狗" forKey:@"3"];
-    [typeNameDictionary setValue:@"狗狗" forKey:@"4"];
+    [typeNameDictionary setValue:@"猫零食" forKey:@"0"];
+    [typeNameDictionary setValue:@"狗零食" forKey:@"1"];
+    [typeNameDictionary setValue:@"猫主粮" forKey:@"2"];
+    [typeNameDictionary setValue:@"犬主粮" forKey:@"3"];
+    [typeNameDictionary setValue:@"猫咪" forKey:@"4"];
+    [typeNameDictionary setValue:@"狗狗" forKey:@"5"];
+    [typeNameDictionary setValue:@"猫/狗医疗用品" forKey:@"6"];
+    [typeNameDictionary setValue:@"猫/狗保健品" forKey:@"7"];
+    [typeNameDictionary setValue:@"宠物服饰及配件" forKey:@"8"];
+    self.type=50023067;
 }
 
 
@@ -84,13 +97,15 @@
 
 -(void)refresh:(UIRefreshControl*)senderVal
 {
-    [self.petUnits removeAllObjects];
-    self.currentPage = 1;
-    [self loadData];
+    [self initLoad];
     sender=senderVal;
 }
+-(void)initLoad{
+    self.currentPage = 1;
+    isEnd=false;
+    [self loadData];
+}
 
-#pragma mark - UICollectionViewDataSource methods
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
@@ -99,23 +114,28 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return [self.petUnits count];
+    return [petUnits count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    ColllectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CELL_ID" forIndexPath:indexPath];
-	
-	[cell.imageView loadImage:[[self.petUnits objectAtIndex:(indexPath.row + indexPath.section) % 5] objectForKey:@"petUrl" ] withPlaceholdImage:[UIImage imageNamed:@""]];
-    
-  
+    PetUICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CELL_ID" forIndexPath:indexPath];
+     NSDictionary * petUnit= [petUnits objectAtIndex:indexPath.row];
+	[cell.imageView loadImage:[petUnit objectForKey:@"picUrl"]  withPlaceholdImage:nil];
+    cell.petId=[petUnit objectForKey:@"numIid"];
+    cell.price=[petUnit objectForKey:@"price"];
+    cell.petUrl=[petUnit objectForKey:@"clickUrl"];
     return cell;
 }
 
 #pragma mark - UICollectionViewDelegate methods
 - (void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"%d selected", indexPath.item);
+    PetUICollectionViewCell *cell = [collectionView  cellForItemAtIndexPath:indexPath];
+    PetDetailViewController *detailViewController=  [[PetDetailViewController alloc]init];
+    detailViewController.petId=cell.petId;
+    detailViewController.petUrl=cell.petUrl;
+    [self presentModalViewController:detailViewController animated:true];
 }
 
 #pragma mark-  UICollecitonViewDelegateWaterFlowLayout
@@ -171,15 +191,21 @@
 - (void)requestFinished:(ASIHTTPRequest *)theRequest
 {
     NSString *response = [theRequest responseString];
-    [petUnits addObjectsFromArray:[[parser objectWithString:response] objectForKey:@"data"]];
-    [self.collectionView reloadData];
-    [refreshControl endRefreshing];
-    
+    NSMutableArray* result=[parser objectWithString:response] ;
+    if ([result count]==0) {
+        isEnd=true;
+    }else{
+        if (currentPage==1) {
+            [petUnits removeAllObjects];
+            [petUnits addObjectsFromArray:result];
+        }else{
+            [petUnits addObjectsFromArray:result];
+        }
+      
+        [self.collectionView reloadData];
+        [refreshControl endRefreshing];
+    }
 }
-
-
-
-
 
 
 - (void)requestFailed:(ASIHTTPRequest *)theRequest
@@ -193,26 +219,24 @@
 
 - (void)loadData {
 	[request cancel];
-     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%d",petURL,self.type]];
-	[self setRequest:[ASIHTTPRequest requestWithURL:url]];
-	[request setDelegate:self];
-	[request startAsynchronous];
-    [requestList addObject:request];
+    if (!isEnd) {
+//        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%d/%d/%d",petURL,self.type,currentPage,count]];
+        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%d",petURL,self.type]];
+        [self setRequest:[ASIHTTPRequest requestWithURL:url]];
+        [request setDelegate:self];
+        [request startAsynchronous];
+        [requestList addObject:request];
+    }
+
 }
 
 - (void)loadMoreData {
 	[self loadData];
 }
 
-
-
-
-
-
-
 #pragma mark LightMenuBarDelegate
 - (NSUInteger)itemCountInMenuBar:(PetMenuBar *)menuBar {
-    return 5;
+    return [typeNameDictionary count];
 }
 
 - (NSString *)itemTitleAtIndex:(NSUInteger)index inMenuBar:(PetMenuBar *)menuBar {
@@ -221,7 +245,7 @@
 
 - (void)itemSelectedAtIndex:(NSUInteger)index inMenuBar:(PetMenuBar *)menuBar {
     type=[[typeDictionary objectForKey:[NSString stringWithFormat:@"%d",index] ]intValue];
-    [refreshControl beginRefreshing];
+    [self initLoad];
 }
 
 //< Optional

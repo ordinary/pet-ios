@@ -9,10 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "PetMenuBarDelegate.h"
 #import "PetMenuBar.h"
-#import "WaterFlowLayout.h"
-#import "ColllectionViewCell.h"
 #import "ASIHTTPRequest.h"
 #import "SBJson.h"
+#import "PetDetailViewController.h"
+#import "PetUICollectionViewCell.h"
+#import "WaterFlowLayout.h"
+#import "PetUICollectionViewCell.h"
+#import "PetDetailViewController.h"
 
 
 @interface PetViewController  : UICollectionViewController <UICollectionViewDataSource,UICollectionViewDelegate,UICollecitonViewDelegateWaterFlowLayout,UICollectionViewDataSourceWaterFlowLayout,PetMenuBarDelegate>
@@ -25,7 +28,8 @@
     NSMutableDictionary * typeDictionary;
     NSMutableDictionary * typeNameDictionary;
     UIRefreshControl * refreshControl;
-    
+    Boolean isEnd;
 }
+
 
 @end

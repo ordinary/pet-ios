@@ -16,7 +16,7 @@ typedef enum {
 @class PetMenuBarView;
 @protocol PetMenuBarDelegate;
 
-@interface PetMenuBar : UIView {
+@interface PetMenuBar : UICollectionReusableView {
     PetMenuBarView *_menuBarView;
     UIScrollView *_scrollView;
     PetMenuBarStyle _style;

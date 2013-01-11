@@ -13,13 +13,13 @@
 - (void)setFlowdatasource:(id<UICollectionViewDataSourceWaterFlowLayout>)flowdatasource
 {
     _flowdatasource = flowdatasource;
-   [self initialize];
+    //[self initialize];
 }
 
 - (void)setFlowdelegate:(id<UICollecitonViewDelegateWaterFlowLayout>)flowdelegate
 {
     _flowdelegate = flowdelegate;
-   [self initialize];
+    //[self initialize];
 }
 
 -(void)prepareLayout

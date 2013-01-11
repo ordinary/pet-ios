@@ -83,11 +83,4 @@
 - (CGFloat)seperatorHeightRateInMenuBar:(PetMenuBar *)menuBar;
 
 
-///****************************************************************************/
-////< Animation Type
-///****************************************************************************/
-//
-///**< Animation Type when an item Button is tapped, by Default LightMenuBarAnimationSlide */
-//- (LightMenuBarAnimation)animationForMenuBar:(LightMenuBar *)menuBar;
-
 @end
